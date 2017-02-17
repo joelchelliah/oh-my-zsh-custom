@@ -1,13 +1,14 @@
 # oh-my-zsh-custom
-> My custom settings for **.zshrc** and **..oh-my-zsh/custom**
+> My **.oh-my-zsh/custom** settings!
 
 
 ## Installation
+** :octocat: Clone custom settings**
 ```bash
-# Clone custom settings
 git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
-
-# Symlink .zshrc
-ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ```
 
+** :link: Symlink `.zshrc`**
+```bash
+ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
+```
