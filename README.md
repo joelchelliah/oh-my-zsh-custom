@@ -2,18 +2,32 @@
 > My **.oh-my-zsh/custom** settings!
 
 
-## Installation
+## Installation and setup
+
+:boom: **Get oh-my-zsh**
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
 :octocat: **Clone custom settings**
 ```bash
+# Delete existing custom folder:
+rm -rf ~/.oh-my-zsh/custom
+
+# Clone this custom folder:
 git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```
 
 :link: **Symlink `.zshrc`**
 ```bash
+# Delete existing .zshrc:
+rm ~/.zshrc
+
+# Link this .zshrc
 ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ```
 
-:book: **Iterm2 config**
+## Iterm2 configuration
 - Theme: [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
 - Font: [SourceCodePro+Powerline+Awesome+Regular.ttf](https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched)
 
