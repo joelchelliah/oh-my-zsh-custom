@@ -11,16 +11,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 :octocat: **Clone custom settings**
 ```bash
-# Delete existing custom folder:
+# Delete existing custom folder
 rm -rf ~/.oh-my-zsh/custom
 
-# Clone this custom folder:
+# Clone this custom folder
 git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```
 
 :link: **Symlink `.zshrc`**
 ```bash
-# Delete existing .zshrc:
+# Delete existing .zshrc
 rm ~/.zshrc
 
 # Link this .zshrc
