@@ -34,11 +34,4 @@ ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ```
 
 ## Iterm2 configuration
-- Theme: [Solarized Dark](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
-- Font: [SourceCodePro+Powerline+Awesome+Regular.ttf](https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched)
-
----
-
-:memo: **TODO**
-- Add personal Iterm2 theme (and also bundle font?)
-- Migrate / bootstrap .dotfiles
+Install iterm2 theme and powerlevel9k-supported font, from the [iterm2-config directory](https://github.com/joelchelliah/oh-my-zsh-custom/tree/master/iterm2-config)
