@@ -4,7 +4,7 @@
 
 ## Installation and setup
 
-:boom: **Get oh-my-zsh**
+:boom: **Install oh-my-zsh**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
@@ -17,6 +17,12 @@ rm -rf ~/.oh-my-zsh/custom
 # Clone this custom folder
 git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```
+
+:muscle: **Install powerlevel9k theme**
+```bash
+$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+Check [powerlevel9k manual](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh) if stuck.
 
 :link: **Symlink `.zshrc`**
 ```bash
