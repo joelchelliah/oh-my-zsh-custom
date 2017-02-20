@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git brew command-not-found alias-tips)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,4 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="atom ~/.zshrc"
 alias zshsource="source ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="atom ~/.oh-my-zsh"
