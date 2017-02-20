@@ -4,10 +4,12 @@
 
 ## Installation and setup
 
-:boom: **Install oh-my-zsh**
+:rocket: **Install oh-my-zsh**
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+
+- :book: [oh-my-zsh manual](https://github.com/robbyrussell/oh-my-zsh)
 
 :octocat: **Clone custom settings**
 ```bash
@@ -22,7 +24,7 @@ git clone git@github.com:joelchelliah/oh-my-zsh-custom.git ~/.oh-my-zsh/custom
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
-Check [powerlevel9k manual](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh) if stuck.
+- :book: [powerlevel9k manual](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
 
 :link: **Symlink `.zshrc`**
 ```bash
@@ -34,4 +36,4 @@ ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
 ```
 
 ## Iterm2 configuration
-Install iterm2 theme and powerlevel9k-supported font, from the [iterm2-config directory](https://github.com/joelchelliah/oh-my-zsh-custom/tree/master/iterm2-config)
+:tophat: [Install iterm2 theme and powerlevel9k-supported font](https://github.com/joelchelliah/oh-my-zsh-custom/tree/master/iterm2-config)
