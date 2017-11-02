@@ -53,6 +53,8 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew command-not-found alias-tips smart-cd)
 
+fpath=($ZSH/custom/completions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
