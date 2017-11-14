@@ -31,6 +31,18 @@ kubelog () {
 }
 
 #############################################################
+# Kube exec shell
+#############################################################
+
+kubesh () {
+  [[ "$#" -lt 2 ]] && `_kubesh_usage` && return
+  local pod=$1
+  local cmd="kubectl exec -it $pod -- /bin/sh"
+
+  echo "👾  $cmd" && eval $cmd
+}
+
+#############################################################
 # Helpers
 #############################################################
 
@@ -50,5 +62,14 @@ _kubelog_usage () {
   echo "   kubelog <app> <environment>" >&2
   echo "   E.g: kubedb feedback dev" >&2
   echo "        will tail all logs from all pods for feedback-dev" >&2
+  echo "👾  ----------------------------------- 👾" >&2
+}
+
+_kubesh_usage () {
+  echo "👾  --------- Kube exec shell --------- 👾" >&2
+  echo "Usage:" >&2
+  echo "   kubesh <pod>" >&2
+  echo "   E.g: kubesh feedback-asjkdhf" >&2
+  echo "        will open a shell terminal for the pod feedback-asjkdhf" >&2
   echo "👾  ----------------------------------- 👾" >&2
 }
