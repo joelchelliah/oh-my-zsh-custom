@@ -1,2 +1,0 @@
-#compdef hins
-_arguments '-s[sort output]' '--l[long output]' '-l[long output]'
