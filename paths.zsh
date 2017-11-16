@@ -30,6 +30,10 @@ export PATH=$BIN/stack-1.0.4-osx-x86_64:$STACK_INSTALL_PATH:$PATH
 ## ---------------------------- GO ----------------------------
 export GOPATH=$HOME/src
 
+## -------------------------- GCLOUD --------------------------
+export GCLOUD_HOME=$BIN/google-cloud-sdk
+export GCLOUD_BIN=$GCLOUD_HOME/bin
+export PATH=$GCLOUD_HOME:$GCLOUD_BIN:$PATH
 
 # ---------------------------- RVM ----------------------------
 export PATH="$PATH:$HOME/.rvm/bin"

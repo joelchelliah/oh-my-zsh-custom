@@ -7,3 +7,5 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias ohmyzshconfig="atom ~/.oh-my-zsh"
 
 alias sshconfig="atom ~/.ssh/config"
+
+alias gw="./gradlew"

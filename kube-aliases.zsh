@@ -11,7 +11,9 @@ kubedb () {
   [[ "$#" -lt 2 ]] && `_kubedb_usage` && return
   local app=$1
   local env=$2
-  local cmd="kubectl exec --namespace $env -it $app-db-$env-mongodb-replicaset-0 -- /bin/sh"
+  local mongo=$(if [[ $app == 'offers' ]] ;then echo "$app-$env-mongodb-replicaset-0"; else echo "$app-db-$env-mongodb-replicaset-0" ;fi)
+  local name=$(if [[ $3 == 'redis' ]] ;then echo $(kubectl get pods --namespace $2 | grep "^redis" | awk '{print $1;}'); else echo $mongo ;fi)
+  local cmd="kubectl exec --namespace $env -it $name -- /bin/sh"
 
   echo "👾  $cmd" && eval $cmd
 }
@@ -25,7 +27,8 @@ kubelog () {
   local app=$1
   local env=$2
   local name=$(if [[ $env == 'production' ]] ;then echo $app; else echo "$app-$env" ;fi)
-  local cmd="kubetail --namespace $env -l app=$name"
+  local pod=$(if [[ $app == 'offers' ]] ;then echo $name-$app; else echo "$name" ;fi)
+  local cmd="kubetail --namespace $env -l app=$pod"
 
   echo "👾  $cmd" && eval $cmd
 }
@@ -37,7 +40,8 @@ kubelog () {
 kubesh () {
   [[ "$#" -lt 2 ]] && `_kubesh_usage` && return
   local pod=$1
-  local cmd="kubectl exec -it $pod -- /bin/sh"
+  local env=$2
+  local cmd="kubectl exec --namespace $env -it $pod -- /bin/sh"
 
   echo "👾  $cmd" && eval $cmd
 }
@@ -49,9 +53,10 @@ kubesh () {
 _kubedb_usage () {
   echo "👾  ---------- Kube DB client --------- 👾" >&2
   echo "Usage:" >&2
-  echo "   kubedb <app> <environment>" >&2
-  echo "   E.g: kubedb feedback dev" >&2
-  echo "        will open a shell client for feedback dev database" >&2
+  echo "   kubedb <app> <environment> [db]" >&2
+  echo "   E.g: kubedb offers dev redis" >&2
+  echo "        will open a shell client for offers dev redis DB" >&2
+  echo "   If [db] is not specified it will default to mongo DB" >&2
   echo "👾  ----------------------------------- 👾" >&2
 }
 
@@ -60,7 +65,7 @@ _kubelog_usage () {
   echo "Dependency: Kubetail - https://github.com/johanhaleby/kubetail" >&2
   echo "Usage:" >&2
   echo "   kubelog <app> <environment>" >&2
-  echo "   E.g: kubedb feedback dev" >&2
+  echo "   E.g: kubelog feedback dev" >&2
   echo "        will tail all logs from all pods for feedback-dev" >&2
   echo "👾  ----------------------------------- 👾" >&2
 }
@@ -68,8 +73,8 @@ _kubelog_usage () {
 _kubesh_usage () {
   echo "👾  --------- Kube exec shell --------- 👾" >&2
   echo "Usage:" >&2
-  echo "   kubesh <pod>" >&2
-  echo "   E.g: kubesh feedback-asjkdhf" >&2
-  echo "        will open a shell terminal for the pod feedback-asjkdhf" >&2
+  echo "   kubesh <pod> <env>" >&2
+  echo "   E.g: kubesh asjkdhf dev" >&2
+  echo "        will open a shell terminal for the pod asjkdhf in dev" >&2
   echo "👾  ----------------------------------- 👾" >&2
 }
