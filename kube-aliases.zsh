@@ -12,7 +12,7 @@ kubedb () {
   local app=$1
   local env=$2
   local mongo=$(if [[ $app == 'offers' ]] ;then echo "$app-$env-mongodb-replicaset-0"; else echo "$app-db-$env-mongodb-replicaset-0" ;fi)
-  local name=$(if [[ $3 == 'redis' ]] ;then echo $(kubectl get pods --namespace $2 | grep "^redis" | awk '{print $1;}'); else echo $mongo ;fi)
+  local name=$(if [[ $3 == 'redis' ]] ;then echo $(kubectl get pods --namespace $2 | grep "redis" | awk '{print $1;}'); else echo $mongo ;fi)
   local cmd="kubectl exec --namespace $env -it $name -- /bin/sh"
 
   echo "👾  $cmd" && eval $cmd

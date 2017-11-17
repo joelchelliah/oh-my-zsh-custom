@@ -20,10 +20,12 @@ gcred () {
 #############################################################
 
 _gcred_usage () {
+  local ctx=$(kubectl config current-context)
   echo "👾  ------- Switch gcloud cluster ----- 👾" >&2
   echo "Usage:" >&2
   echo "   gcred <name>" >&2
   echo "   E.g: gcred entur" >&2
   echo "        will switch to the entur cluster" >&2
   echo "👾  ----------------------------------- 👾" >&2
+  echo "👾  Current context: $ctx" >&2
 }
