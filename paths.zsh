@@ -29,3 +29,7 @@ export PATH=$BIN/stack-1.0.4-osx-x86_64:$STACK_INSTALL_PATH:$PATH
 
 ## ---------------------------- GO ----------------------------
 export GOPATH=$HOME/src
+
+
+## -------------------------- VSCODE --------------------------
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
