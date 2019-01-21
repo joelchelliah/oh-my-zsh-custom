@@ -18,7 +18,7 @@ hins () {
   local dry=$(if [[ $4 == 'dry' ]] ;then echo "--dry-run --debug"; else echo "" ;fi)
   local name=$(if [[ $env == 'production' ]] ;then echo $app; else echo "$app-$env" ;fi)
   local domain=$(if [[ $env == 'production' ]] ;then echo "entur.org"; else echo "entur.io" ;fi)
-  local cmd="helm install --name $name --namespace $env --set environment=$env --set imageTag=$tag --set domain=$domain $dry ./$app-chart"
+  local cmd="helm install --name $name --namespace $env --set environment=$env --set imageTag=$tag --set domain=$domain $dry entur/offers"
 
   [ $(_is_app_valid $app) -eq 1 ] && [ $(_is_env_valid $env) -eq 1 ] && `_helm_command_confirm_and_run "$cmd"`
 }
@@ -35,7 +35,7 @@ hupd () {
   local dry=$(if [[ $4 == 'dry' ]] ;then echo "--dry-run --debug"; else echo "" ;fi)
   local name=$(if [[ $env == 'production' ]] ;then echo $app; else echo "$app-$env" ;fi)
   local domain=$(if [[ $env == 'production' ]] ;then echo "entur.org"; else echo "entur.io" ;fi)
-  local cmd="helm upgrade $name --namespace $env --set environment=$env --set imageTag=$tag --set domain=$domain $dry ./$app-chart"
+  local cmd="helm upgrade $name --set environment=$env --set imageTag=$tag --set domain=$domain $dry entur/offers"
 
   [ $(_is_app_valid $app) -eq 1 ] && [ $(_is_env_valid $env) -eq 1 ] && `_helm_command_confirm_and_run "$cmd"`
 }

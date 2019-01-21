@@ -46,6 +46,15 @@ kubesh () {
   echo "👾  $cmd" && eval $cmd
 }
 
+kubepf () {
+  [[ "$#" -lt 2 ]] && `_kubepf_usage` && return
+  local env=$1
+  local pod=$2
+  local cmd="kubectl port-forward --namespace $env $pod 9010:9010"
+
+  echo "👾  $cmd" && eval $cmd
+}
+
 #############################################################
 # Helpers
 #############################################################
@@ -76,5 +85,14 @@ _kubesh_usage () {
   echo "   kubesh <pod> <env>" >&2
   echo "   E.g: kubesh asjkdhf dev" >&2
   echo "        will open a shell terminal for the pod asjkdhf in dev" >&2
+  echo "👾  ----------------------------------- 👾" >&2
+}
+
+_kubepf_usage () {
+  echo "👾  ------- Kube port forwarding ------ 👾" >&2
+  echo "Usage:" >&2
+  echo "   kubepf <env> <pod>" >&2
+  echo "   E.g: kubepf dev offers-dev-offers-7958fb6b9c-bxphc" >&2
+  echo "        will forward the pod through port 9010:9010" >&2
   echo "👾  ----------------------------------- 👾" >&2
 }
