@@ -1,12 +1,12 @@
 # ZSH
 
-alias zshconfig="atom ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 
 alias ohmyzsh="cd ~/.oh-my-zsh"
-alias ohmyzshconfig="atom ~/.oh-my-zsh"
+alias ohmyzshconfig="code ~/.oh-my-zsh"
 
-alias sshconfig="atom ~/.ssh/config"
+alias sshconfig="code ~/.ssh/config"
 
 alias gw="./gradlew"
 

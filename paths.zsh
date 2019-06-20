@@ -40,3 +40,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 ## -------------------------- VSCODE --------------------------
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+
+## ---------------------- ITERM2 SCRIPTS ----------------------
+export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
