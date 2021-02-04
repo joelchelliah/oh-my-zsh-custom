@@ -10,8 +10,6 @@ alias sshconfig="code ~/.ssh/config"
 
 alias gw="./gradlew"
 
-alias scov="echo 'gw clean test testScoverage reportScoverage' && gw clean test testScoverage reportScoverage"
-
 # Set tab color
 tabColor () {
   case $1 in

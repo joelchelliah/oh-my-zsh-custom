@@ -55,6 +55,10 @@ plugins=(git brew command-not-found alias-tips smart-cd git-flow-completion)
 
 fpath=($ZSH/custom/completions $fpath)
 
+
+# Skip the verification of insecure directories
+ZSH_DISABLE_COMPFIX="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -95,8 +99,17 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 # YARN THINGS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# CIRCLCI THINGS
+export CIRCLE_TOKEN=f3da0d2d77270ec0f5b95c860d70f847cc544e61
+
 
 # NVM THINGS
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# NODE THINGS
+export NODE_OPTIONS=--max_old_space_size=4096
+
+# RBENV THINGS
+eval "$(rbenv init -)"
