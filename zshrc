@@ -99,10 +99,6 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 # YARN THINGS
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# CIRCLCI THINGS
-export CIRCLE_TOKEN=f3da0d2d77270ec0f5b95c860d70f847cc544e61
-
-
 # NVM THINGS
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
