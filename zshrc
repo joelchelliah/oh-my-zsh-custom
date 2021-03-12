@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew command-not-found alias-tips smart-cd git-flow-completion)
+plugins=(git brew command-not-found alias-tips)
 
 fpath=($ZSH/custom/completions $fpath)
 
@@ -82,30 +82,51 @@ export LANG=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export PASSWORD_STORE_DIR=~/src/entur/.password-store
 
+
+# # # # # # # # # # # # # # # #
+#  APPLLICATION BASED THINGS  #
+# # # # # # # # # # # # # # # #
+
+### BIN
+export BIN=$HOME/bin
+export PATH=$BIN:$PATH
+
+### ANDROID
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export PASSWORD_STORE_DIR=~/src/entur/.password-store
-
-# The next line updates PATH for the Google Cloud SDK.
+### GCLOUD
+export GCLOUD_HOME=$BIN/google-cloud-sdk
+export GCLOUD_BIN=$GCLOUD_HOME/bin
+export PATH=$GCLOUD_HOME:$GCLOUD_BIN:$PATH
+# Update PATH for the Google Cloud SDK.
 if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/joelchelliah/bin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
+# Enable shell command completion for gcloud.
 if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
-# YARN THINGS
+### ITERM2
+export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
+
+### JAVA
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+#export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
+
+### VSCODE
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+
+### YARN
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# NVM THINGS
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# NODE THINGS
+# NODE
 export NODE_OPTIONS=--max_old_space_size=4096
 
-# RBENV THINGS
-eval "$(rbenv init -)"
+## RUBY ENV
+export PATH="$PATH:$HOME/.rvm/bin"
