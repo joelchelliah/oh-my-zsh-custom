@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew command-not-found alias-tips)
+plugins=(git brew command-not-found alias-tips vscode)
 
 fpath=($ZSH/custom/completions $fpath)
 
@@ -130,3 +130,4 @@ export NODE_OPTIONS=--max_old_space_size=4096
 
 ## RUBY ENV
 export PATH="$PATH:$HOME/.rvm/bin"
+eval "$(rbenv init -)"
