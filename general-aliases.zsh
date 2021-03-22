@@ -3,12 +3,20 @@
 alias zshconfig="code ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 
+# Same as above but with echo
+alias reload="echo -e 'Running: source ~/.zshrc\n...'; source ~/.zshrc"
+
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias ohmyzshconfig="code ~/.oh-my-zsh"
 
 alias sshconfig="code ~/.ssh/config"
 
 alias gw="./gradlew"
+
+# Frequently used folders
+alias custom="~/.oh-my-zsh/custom"
+alias entur="cd ~/src/entur-clients/"
+alias bff="cd ~/src/entur-bff/"
 
 # Set tab color
 tabColor () {
