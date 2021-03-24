@@ -18,6 +18,9 @@ alias custom="~/.oh-my-zsh/custom"
 alias entur="cd ~/src/entur-clients/"
 alias bff="cd ~/src/entur-bff/"
 
+# Check the temperature
+alias temp="sudo powermetrics --samplers smc |grep -i 'CPU die temperature'"
+
 # Set tab color
 tabColor () {
   case $1 in
