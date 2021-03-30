@@ -1,27 +1,33 @@
-# ZSH
-
+### 🐚 ZSH
 alias zshconfig="code ~/.zshrc"
 alias zshsource="source ~/.zshrc"
-
-# Same as above but with echo
-alias reload="echo -e 'Running: source ~/.zshrc\n...'; source ~/.zshrc"
-
+alias reload="echo -e 'Running: source ~/.zshrc\n...'; zshsource"
+# Oh my...
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias ohmyzshconfig="code ~/.oh-my-zsh"
 
-alias sshconfig="code ~/.ssh/config"
 
-alias gw="./gradlew"
-
-# Frequently used folders
+### 🗂 Frequently used folders
 alias custom="~/.oh-my-zsh/custom"
 alias entur="cd ~/src/entur-clients/"
 alias bff="cd ~/src/entur-bff/"
 
-# Check the temperature
+
+### 🌡️ Check the CPU temperature
 alias temp="sudo powermetrics --samplers smc |grep -i 'CPU die temperature'"
 
-# Set tab color
+
+### 🧶 Yarn laziness
+alias ts="yarn ts && yarn lint && yarn test"
+alias tsr="yarn eslint stop && ts"
+
+
+### 🍱 Misc
+alias sshconfig="code ~/.ssh/config"
+alias gw="./gradlew"
+
+
+### 🎨 Set the tab color
 tabColor () {
   case $1 in
   red)
@@ -47,7 +53,6 @@ tabColor () {
   ;;
   esac
 }
-
 # Set tab color by RBG value
 tabColorRBG () {
   echo -e "\033]6;1;bg;red;brightness;$1\a"

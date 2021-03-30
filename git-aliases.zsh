@@ -1,9 +1,13 @@
-# Custom / Overridden git aliases
+### 🐙 Custom / Overridden git aliases
 
-alias gcm='git commit -m'
-alias gp='git pull --prune'
-alias gps='git push'
 alias gs='git status -s'
+alias gcm='git commit -m'
+
+alias gp='git pull --prune'
+alias gupm="git pull --rebase origin master"
+
+alias gps='git push'
+alias gpsf='gps -f'
 
 # Add all changes and show status
 alias gaa="git add .; echo -e '\nAdded all changes\n'; git status -s"
