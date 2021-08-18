@@ -9,6 +9,9 @@ alias gupm="git pull --rebase origin master"
 alias gps='git push'
 alias gpsf='gps -f'
 
+# Push to stash with name
+alias gstam='git stash push -m'
+
 # Add all changes and show status
 alias gaa="git add .; echo -e '\nAdded all changes\n'; git status -s"
 
@@ -30,6 +33,7 @@ gcb () { gco -b $1 && gps --set-upstream origin $(git_current_branch); }
 gcwb () { git commit -m "$(git rev-parse --abbrev-ref HEAD): $1"; }
 
 # Open Bitbucket pull request for current branch
+unalias gpr
 gpr () {
     repo=${PWD##*/}
     branch=$(git_current_branch)
