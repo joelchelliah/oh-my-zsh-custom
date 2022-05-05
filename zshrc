@@ -77,3 +77,27 @@ export NODE_OPTIONS=--max_old_space_size=4096
 ## RUBY ENV
 export PATH="$PATH:$HOME/.rvm/bin"
 eval "$(rbenv init -)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/Joel/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/Joel/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/Joel/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/Joel/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# PYENV
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Joel/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Joel/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/Joel/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Joel/google-cloud-sdk/completion.zsh.inc'; fi

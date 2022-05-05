@@ -25,6 +25,12 @@ alias gh="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 # Check out master
 alias gcom="gco master"
 
+# Reset all commits in branch so that they can be squashed
+alias gsq='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'
+
+# Delete remote branch
+alias gbdo='git push origin --delete'
+
 # Create new branch and set upstream
 unalias gcb
 gcb () { gco -b $1 && gps --set-upstream origin $(git_current_branch); }
