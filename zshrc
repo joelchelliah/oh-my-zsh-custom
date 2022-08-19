@@ -57,7 +57,8 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export JAVA_HOME="`/usr/libexec/java_home -v '11'`"
 #export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
 
 ### VSCODE
@@ -101,3 +102,5 @@ if [ -f '/Users/Joel/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Joel/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/Joel/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Joel/google-cloud-sdk/completion.zsh.inc'; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

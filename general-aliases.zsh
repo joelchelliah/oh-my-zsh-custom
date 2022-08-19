@@ -22,6 +22,10 @@ alias ts="yarn ts && yarn lint && yarn test"
 alias tsr="yarn eslint stop && ts"
 
 
+### 📆 Date stuff
+alias week='date +%V'
+alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
+
 ### 🍱 Misc
 alias sshconfig="code ~/.ssh/config"
 alias gw="./gradlew"
