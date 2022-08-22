@@ -32,22 +32,5 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uE868  %d.%m.%y}"
 
 # Prompt Segments View
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs root_indicator context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load ram time)
-
-
-## Entur project icons in current path
-# USAGE:
-#   Inside the `prompt_dir() {` function, under the relevant STRATEGY, add this after calculating current_path:
-#
-#     current_path=$(powerLevelIconifyEntur $current_path)
-#
-function powerLevelIconifyEntur () {
-  echo $((echo $1) \
-  | sed -e "s,packages, 📦 ," \
-  | sed -e "s,client-native, 📱 ," \
-  | sed -e "s,client-web, 🖥'	," \
-  | sed -e "s,client-widget, 🕹' ," \
-  | sed -e "s,i18n, 📚 ," \
-  )
-}
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs root_indicator context dir rbenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()

@@ -29,6 +29,7 @@ alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
 ### 🍱 Misc
 alias sshconfig="code ~/.ssh/config"
 alias gw="./gradlew"
+alias vsc="code ."
 
 
 ### 🎨 Set the tab color

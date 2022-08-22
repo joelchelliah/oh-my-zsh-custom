@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -9,12 +6,15 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git brew command-not-found alias-tips vscode)
-
-fpath=($ZSH/custom/completions $fpath)
+plugins=(git command-not-found alias-tips)
 
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+fpath=($ZSH/custom/completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,7 +58,7 @@ export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
 # export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
-export JAVA_HOME="`/usr/libexec/java_home -v '11'`"
+# export JAVA_HOME="`/usr/libexec/java_home -v '11'`"
 #export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
 
 ### VSCODE
