@@ -4,11 +4,11 @@ alias zshsource="source ~/.zshrc"
 alias reload="echo -e 'Running: source ~/.zshrc\n...'; zshsource"
 # Oh my...
 alias ohmyzsh="cd ~/.oh-my-zsh"
+alias custom="cd ~/.oh-my-zsh/custom"
 alias ohmyzshconfig="code ~/.oh-my-zsh"
 
 
 ### 🗂 Frequently used folders
-alias custom="~/.oh-my-zsh/custom"
 alias entur="cd ~/src/entur-clients/"
 alias bff="cd ~/src/entur-bff/"
 
