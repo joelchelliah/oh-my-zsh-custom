@@ -79,6 +79,13 @@ fkill() {
 }
 
 
+# # # # # # # # fp # # # # # # # #
+# With preview using bat
+#
+# requires bat to be installed
+#
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
 # # # # # # # # fstash # # # # # # # #
 # easier way to deal with stashes
 #
