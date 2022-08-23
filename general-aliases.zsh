@@ -30,6 +30,8 @@ alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
 alias sshconfig="code ~/.ssh/config"
 alias gw="./gradlew"
 alias vsc="code ."
+alias ip="echo -e 'WiFi IP address:'; ipconfig getifaddr en0"
+alias ipc="ipconfig getifaddr en0 | pbcopy; echo -e 'WiFi IP address copied to clipboard!'"
 
 
 ### 🎨 Set the tab color
