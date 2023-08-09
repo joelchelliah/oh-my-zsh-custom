@@ -15,8 +15,9 @@ alias gstam='git stash push -m'
 # Add all changes and show status
 alias gaa="git add .; echo -e '\nAdded all changes\n'; git status -s"
 
-# Undo last local commit and show status
+# Undo / redo last local commit and show status
 alias gun="git undo; echo -e '\nUndid last commit\n'; git status -s"
+alias gre="git redo; echo -e '\nRedid previously undid commit\n'; git status -s"
 
 # Logs
 alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"

@@ -6,7 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git command-not-found alias-tips)
+plugins=(git command-not-found alias-tips docker-compose)
 
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -57,9 +57,8 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
-# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
-# export JAVA_HOME="`/usr/libexec/java_home -v '11'`"
-#export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home
+export PATH=$PATH:$JAVA_HOME/bin
 
 ### VSCODE
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
@@ -67,34 +66,23 @@ export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/
 ### YARN
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# NVM
+### NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# NODE
+### NODE
 export NODE_OPTIONS=--max_old_space_size=4096
 
-## RUBY ENV
+### DOCKER / COLIMA
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export DOCKER_HOST="unix://${HOME}/.colima/docker.sock"
+
+### RUBY ENV
 export PATH="$PATH:$HOME/.rvm/bin"
 eval "$(rbenv init -)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/Joel/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/Joel/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/Joel/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/Joel/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# PYENV
+### PYENV
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -105,5 +93,13 @@ if [ -f '/Users/Joel/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Joel
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# CURL
+### PNPM
+export PNPM_HOME="/Users/Joel/Library/pnpm"
+
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+### CURL
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"

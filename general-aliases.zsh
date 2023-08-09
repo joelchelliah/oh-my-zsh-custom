@@ -33,7 +33,7 @@ alias vsc="code ."
 
 ### 🛰️ IP address
 alias ip="echo -e 'WiFi IP address:'; ipconfig getifaddr en0"
-alias ipc="ipconfig getifaddr en0 | pbcopy; echo -e 'WiFi IP address copied to clipboard!'"
+alias ipc="echo -n $(ipconfig getifaddr en0) | pbcopy; echo -e 'WiFi IP address copied to clipboard!'"
 
 
 ### 🎨 Set the tab color
