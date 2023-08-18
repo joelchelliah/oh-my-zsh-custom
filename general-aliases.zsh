@@ -4,32 +4,24 @@ alias zshsource="source ~/.zshrc"
 alias reload="echo -e 'Running: source ~/.zshrc\n...'; zshsource"
 # Oh my...
 alias ohmyzsh="cd ~/.oh-my-zsh"
-alias custom="cd ~/.oh-my-zsh/custom"
 alias ohmyzshconfig="code ~/.oh-my-zsh"
-
-
-### 🗂 Frequently used folders
-alias entur="cd ~/src/entur-clients/"
-alias bff="cd ~/src/entur-bff/"
 
 
 ### 🌡️ Check the CPU temperature
 alias temp="sudo powermetrics --samplers smc |grep -i 'CPU die temperature'"
 
 
-### 🧶 Yarn laziness
-alias ts="yarn ts && yarn lint && yarn test"
-alias tsr="yarn eslint stop && ts"
-
-
 ### 📆 Date stuff
 alias week='date +%V'
 alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
 
+
 ### 🍱 Misc
 alias sshconfig="code ~/.ssh/config"
-alias gw="./gradlew"
 alias vsc="code ."
+# To avoid using any system wide Gradle distribution
+alias gradle=gw
+unalias gw
 
 ### 🛰️ IP address
 alias ip="echo -e 'WiFi IP address:'; ipconfig getifaddr en0"

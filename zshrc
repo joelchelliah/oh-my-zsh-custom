@@ -103,3 +103,7 @@ esac
 
 ### CURL
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+
+### Compinit (needed for command completion)
+autoload -Uz compinit && compinit -i
