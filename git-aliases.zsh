@@ -23,8 +23,8 @@ alias gre="git redo; echo -e '\nRedid previously undid commit\n'; git status -s"
 alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"
 alias gh="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
 
-# Check out master
-alias gcom="gco master"
+# Check out main or master
+alias gcom="git co $(git_main_branch)"
 
 # Reset all commits in branch so that they can be squashed
 alias gsq='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'

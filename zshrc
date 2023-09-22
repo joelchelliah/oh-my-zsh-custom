@@ -57,7 +57,8 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 
 ### VSCODE
@@ -75,8 +76,9 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_OPTIONS=--max_old_space_size=4096
 
 ### DOCKER / COLIMA
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
-export DOCKER_HOST="unix://${HOME}/.colima/docker.sock"
+export TESTCONTAINERS_RYUK_DISABLED=true
 
 ### RUBY ENV
 export PATH="$PATH:$HOME/.rvm/bin"

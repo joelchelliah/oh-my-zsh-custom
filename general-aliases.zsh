@@ -19,9 +19,10 @@ alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
 ### 🍱 Misc
 alias sshconfig="code ~/.ssh/config"
 alias vsc="code ."
+
 # To avoid using any system wide Gradle distribution
 alias gradle=gw
-unalias gw
+# unalias gw
 
 ### 🛰️ IP address
 alias ip="echo -e 'WiFi IP address:'; ipconfig getifaddr en0"
