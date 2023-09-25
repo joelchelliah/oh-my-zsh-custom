@@ -4,7 +4,10 @@ alias gs='git status -s'
 alias gcm='git commit -m'
 
 alias gp='git pull --prune'
-alias gupm="git pull --rebase origin master"
+
+# Fetch latest from master AND rebase on top of those changes
+# Better than `grbm` which does not automatically fetch lastest.
+alias gupm="git pull --rebase origin $(git_main_branch)"
 
 alias gps='git push'
 alias gpsf='gps -f'
@@ -27,7 +30,7 @@ alias gh="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias gcom="git co $(git_main_branch)"
 
 # Reset all commits in branch so that they can be squashed
-alias gsq='git reset --soft HEAD~$(git rev-list --count HEAD ^master)'
+alias gsq="git reset --soft HEAD~$(git rev-list --count HEAD ^$(git_main_branch))"
 
 # Delete remote branch
 alias gbdo='git push origin --delete'
@@ -50,12 +53,12 @@ gpr () {
 
 # Delete all merged local branches (with prompt)
 gbdm () {
-    if [[ "$(git_current_branch)" != "master" ]]; then
-        gco master
+    if [[ "$(git_current_branch)" != "$(git_main_branch)" ]]; then
+        gcom
         git pull --prune --quiet
     fi
 
-    merged=$(git branch --no-color --merged| egrep -v "(^\*|master)")
+    merged=$(git branch --no-color --merged| egrep -v "(^\*|$(git_main_branch))")
 
     if [[ ${#merged[@]} -eq 0 ]]; then
         echo "✨ $(tput setaf 2)No merged local branches found$(tput sgr 0)"

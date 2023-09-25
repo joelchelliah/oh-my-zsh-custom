@@ -1,6 +1,7 @@
 ### 🐚 ZSH
 alias zshconfig="code ~/.zshrc"
 alias zshsource="source ~/.zshrc"
+alias p10source="source ~/.p10k.zsh"
 alias reload="echo -e 'Running: source ~/.zshrc\n...'; zshsource"
 # Oh my...
 alias ohmyzsh="cd ~/.oh-my-zsh"
