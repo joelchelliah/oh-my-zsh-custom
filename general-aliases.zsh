@@ -29,6 +29,11 @@ alias gradle=gw
 alias ip="echo -e 'WiFi IP address:'; ipconfig getifaddr en0"
 alias ipc="echo -n $(ipconfig getifaddr en0) | pbcopy; echo -e 'WiFi IP address copied to clipboard!'"
 
+## 🐘 Gradle
+alias gwDeps='gw dependencies $(gw -q projects \
+    | grep -Fe ---\ Project \
+    | sed -Ee "s/^.+--- Project '"'([^']+)'/\1:dependencies/"'")'
+
 
 ### 🎨 Set the tab color
 tabColor () {
