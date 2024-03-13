@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git command-not-found alias-tips docker-compose)
+plugins=(git command-not-found docker-compose)
 
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -64,7 +64,6 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/openlogic-openjdk-11.jdk/Contents/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 
@@ -95,15 +94,15 @@ eval "$(rbenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/Joel/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Joel/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/joelchelliah/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joelchelliah/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/Joel/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Joel/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/joelchelliah/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/joelchelliah/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### PNPM
-export PNPM_HOME="/Users/Joel/Library/pnpm"
+export PNPM_HOME="/Users/joelchelliah/Library/pnpm"
 
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
@@ -124,7 +123,7 @@ autoload -Uz compinit && compinit -i
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # pnpm
-export PNPM_HOME="/Users/Joel/Library/pnpm"
+export PNPM_HOME="/Users/joelchelliah/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

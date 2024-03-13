@@ -53,29 +53,39 @@ gpr () {
 
 # Delete all merged local branches (with prompt)
 gbdm () {
+    # Check if the current branch is not the main branch
     if [[ "$(git_current_branch)" != "$(git_main_branch)" ]]; then
         gcom
         git pull --prune --quiet
     fi
 
-    merged=$(git branch --no-color --merged| egrep -v "(^\*|$(git_main_branch))")
+    # Get all branches
+    all_branches=$(git branch --no-color | egrep -v "(^\*|$(git_main_branch))")
 
-    if [[ ${#merged[@]} -eq 0 ]]; then
-        echo "✨ $(tput setaf 2)No merged local branches found$(tput sgr 0)"
+    # Get all merged branches and squash-merged branches
+    merged_branches=""
+    for branch in $all_branches; do
+        # Check if the branch is merged or squash-merged
+        if git branch --merged | grep -q "$branch" || git --no-pager log --grep="$branch" --oneline; then
+            merged_branches+="$branch "
+        fi
+    done
+
+    # Exit if there are no merged branches
+    if [[ -z "$merged_branches" ]]; then
+        printf "✨ %sNo merged local branches found%s\n" "$(tput setaf 2)" "$(tput sgr 0)"
         return
     fi
 
-    tput bold; echo "The following local branches are merged:"; tput sgr0
-    echo $merged
+    # Print the merged branches
+    printf "%sThe following local branches are merged:%s\n" "$(tput bold)" "$(tput sgr0)"
+    printf "%s\n" "$merged_branches"
 
-    ## Use for bash `read`
-    #read -p "Delete all (y/n)?" choice
-
-    ## Use for zsh `read`
+    # Delete all merged branches? y/n
     read "choice?$(tput setaf 1)Delete all (y/n)?$(tput sgr 0) "
 
     case "$choice" in
-        y|Y ) tput setaf 2; echo $merged | xargs git branch -d;;
-        * ) echo "Did not delete any branches";;
+        y|Y ) printf "%s\n" "$merged_branches" | xargs git branch -D;;
+        * ) printf "Did not delete any branches\n";;
     esac
 }
