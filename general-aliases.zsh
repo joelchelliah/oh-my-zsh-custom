@@ -35,6 +35,9 @@ alias gwDeps='gw dependencies $(gw -q projects \
     | sed -Ee "s/^.+--- Project '"'([^']+)'/\1:dependencies/"'")'
 
 
+## Colima start
+alias cols="colima start --cpu 4 --memory 16 --disk 100 --vm-type=vz --vz-rosetta"
+
 ### 🎨 Set the tab color
 tabColor () {
   case $1 in

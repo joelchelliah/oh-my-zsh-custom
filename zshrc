@@ -87,8 +87,8 @@ export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_RYUK_DISABLED=true
 
 ### RUBY ENV
-export PATH="$PATH:$HOME/.rvm/bin"
-eval "$(rbenv init -)"
+# export PATH="$PATH:$HOME/.rvm/bin"
+# eval "$(rbenv init -)"
 
 ### PYENV
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
