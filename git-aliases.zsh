@@ -5,9 +5,11 @@ alias gcm='git commit -m'
 
 alias gp='git pull --prune'
 
-# Fetch latest from master AND rebase on top of those changes
+# Fetch latest from `main`-branch AND rebase on top of those changes
 # Better than `grbm` which does not automatically fetch lastest.
 alias gupm="git pull --rebase origin $(git_main_branch)"
+# Fetch latest from develop AND rebase on top of those changes
+alias gupd="git pull --rebase origin develop"
 
 alias gps='git push'
 alias gpsf='gps -f'
@@ -24,7 +26,7 @@ alias gre="git redo; echo -e '\nRedid previously undid commit\n'; git status -s"
 
 # Logs
 alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"
-alias gh="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
+alias ghist="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen | %ad (%cr) | %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
 
 # Check out main or master
 alias gcom="git co $(git_main_branch)"
