@@ -18,6 +18,11 @@ typeset -ga BYPASS_VPN_HOSTS=(
     gmail.com
     youtube.com
     vg.no
+    styrerommet.no
+    mail.styrerommet.no
+    innlogging.obos.no
+    obos.no
+    jozo.io
 )
 
 function bypass_vpn() {

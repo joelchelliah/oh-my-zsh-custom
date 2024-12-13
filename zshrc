@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git command-not-found docker-compose bypass-vpn)
+plugins=(git command-not-found docker-compose vpn-split)
 
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
