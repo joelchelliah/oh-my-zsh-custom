@@ -1,11 +1,14 @@
 ### 🐚 ZSH
-alias zshconfig="code ~/.zshrc"
+alias zshconfig="cursor ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias p10source="source ~/.p10k.zsh"
-alias reload="echo -e 'Running: source ~/.zshrc\n...'; zshsource"
+alias reload="echo -e '🛠️   Running: source ~/.zshrc\n...'; zshsource"
 # Oh my...
 alias ohmyzsh="cd ~/.oh-my-zsh"
-alias ohmyzshconfig="code ~/.oh-my-zsh"
+alias ohmyzshconfig="cursor ~/.oh-my-zsh"
+
+### 🤖 Claude
+alias claude="/Users/joelchelliah/.claude/local/claude"
 
 
 ### 🌡️ Check the CPU temperature
@@ -18,8 +21,8 @@ alias isodate='date +'\''%Y-%m-%dT%H:%M:%SZ'\'
 
 
 ### 🍱 Misc
-alias sshconfig="code ~/.ssh/config"
-alias vsc="code ."
+alias sshconfig="cursor ~/.ssh/config"
+alias vsc="cursor ."
 
 # To avoid using any system wide Gradle distribution
 alias gradle=gw
