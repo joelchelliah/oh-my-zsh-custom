@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git command-not-found docker-compose vpn-split)
+plugins=(git command-not-found docker-compose vpn-split zsh-autosuggestions)
 
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -60,12 +60,12 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/path.zsh.inc' ]; then source '
 # Enable shell command completion for gcloud.
 if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
-### ITERM2
-export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
-
 ### JAVA
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
+
+### GRADLE
+GRADLE_PROPS="$HOME/.gradle/gradle.properties"
 
 ### VSCODE
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
@@ -85,10 +85,6 @@ export NODE_OPTIONS=--max_old_space_size=4096
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_RYUK_DISABLED=true
-
-### RUBY ENV
-# export PATH="$PATH:$HOME/.rvm/bin"
-# eval "$(rbenv init -)"
 
 ### PYENV
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
@@ -131,3 +127,17 @@ esac
 # pnpm end
 
 export PATH="$HOME/.local/bin:$PATH"
+
+### AUTOSUGGEST CONFIG
+# Change what triggers suggestions (history is default, can add completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# Accept suggestion with Tab instead of right-arrow (optional — some prefer this)
+bindkey '^I' autosuggest-accept
+
+## ## ## ## ## ## ## ## ## ##
+
+### TRAFIKKDATA
+if [[ -f "$GRADLE_PROPS" ]]; then
+  export TRAFIKKDATA_GH_PKG_TOKEN=$(sed -n 's/^GITHUB_TOKEN=//p' "$GRADLE_PROPS")
+fi
