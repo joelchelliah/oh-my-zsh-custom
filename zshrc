@@ -64,7 +64,7 @@ if [ -f '/Users/joelchelliah/bin/google-cloud-sdk/completion.zsh.inc' ]; then so
 export PATH=$PATH:$HOME/Library/Application\ Support/iTerm2/Scripts
 
 ### JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 
 ### VSCODE
@@ -129,3 +129,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="$HOME/.local/bin:$PATH"

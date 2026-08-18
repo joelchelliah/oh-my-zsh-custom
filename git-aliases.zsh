@@ -61,17 +61,19 @@ gbdm () {
         git pull --prune --quiet
     fi
 
-    # Get all branches
-    all_branches=$(git branch --no-color | egrep -v "(^\*|$(git_main_branch))")
-
-    # Get all merged branches and squash-merged branches
+    # Get merged branches (including squash-merged)
     merged_branches=""
-    for branch in $all_branches; do
-        # Check if the branch is merged or squash-merged
-        if git branch --merged | grep -q "$branch" || git --no-pager log --grep="$branch" --oneline; then
+    main_branch=$(git_main_branch)
+
+    for branch in $(git branch --no-color | grep -E -v "(^\*|$main_branch)" | sed 's/^[[:space:]]*//'); do
+        # Check if branch is merged OR if all its commits exist in main (squash-merged)
+        if git branch --merged | grep -q "^[[:space:]]*$branch$" || \
+           [[ $(git cherry "$main_branch" "$branch" 2>/dev/null | wc -l) -eq 0 ]]; then
             merged_branches+="$branch "
         fi
     done
+
+    merged_branches=$(echo "$merged_branches" | xargs)
 
     # Exit if there are no merged branches
     if [[ -z "$merged_branches" ]]; then

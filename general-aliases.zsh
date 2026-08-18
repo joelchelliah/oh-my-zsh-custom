@@ -7,10 +7,6 @@ alias reload="echo -e '🛠️   Running: source ~/.zshrc\n...'; zshsource"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias ohmyzshconfig="cursor ~/.oh-my-zsh"
 
-### 🤖 Claude
-alias claude="/Users/joelchelliah/.claude/local/claude"
-
-
 ### 🌡️ Check the CPU temperature
 alias temp="sudo powermetrics --samplers smc |grep -i 'CPU die temperature'"
 
