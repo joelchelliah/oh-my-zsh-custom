@@ -32,7 +32,7 @@ alias ghist="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)
 alias gcom="git co $(git_main_branch)"
 
 # Reset all commits in branch so that they can be squashed
-alias gsq="git reset --soft HEAD~$(git rev-list --count HEAD ^$(git_main_branch))"
+alias gsq='git reset --soft HEAD~$(git rev-list --count HEAD ^$(git_main_branch))'
 
 # Delete remote branch
 alias gbdo='git push origin --delete'
