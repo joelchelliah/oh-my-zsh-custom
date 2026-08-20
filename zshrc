@@ -85,6 +85,8 @@ export NODE_OPTIONS=--max_old_space_size=4096
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_RYUK_DISABLED=true
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 ### PYENV
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
@@ -121,8 +123,8 @@ autoload -Uz compinit && compinit -i
 # pnpm
 export PNPM_HOME="/Users/joelchelliah/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -140,4 +142,5 @@ bindkey '^I' autosuggest-accept
 ### TRAFIKKDATA
 if [[ -f "$GRADLE_PROPS" ]]; then
   export TRAFIKKDATA_GH_PKG_TOKEN=$(sed -n 's/^GITHUB_TOKEN=//p' "$GRADLE_PROPS")
+  export FONTAWESOME_PACKAGE_TOKEN=$(sed -n 's/^FONTAWESOME_TOKEN=//p' "$GRADLE_PROPS")
 fi
