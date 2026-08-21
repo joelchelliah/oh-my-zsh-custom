@@ -144,3 +144,16 @@ if [[ -f "$GRADLE_PROPS" ]]; then
   export TRAFIKKDATA_GH_PKG_TOKEN=$(sed -n 's/^GITHUB_TOKEN=//p' "$GRADLE_PROPS")
   export FONTAWESOME_PACKAGE_TOKEN=$(sed -n 's/^FONTAWESOME_TOKEN=//p' "$GRADLE_PROPS")
 fi
+
+## ## ## ## ## ## ## ## ## ##
+
+### Key bindings
+# Shift+Left / Shift+Right — word jump
+bindkey "^[[1;2D" backward-word
+bindkey "^[[1;2C" forward-word
+
+# Shift+Cmd+Left / Shift+Cmd+Right — kill word backward/forward
+bindkey "^[[1;10D" backward-kill-word
+bindkey "^[[1;10C" kill-word
+
+## ## ## ## ## ## ## ## ## ##
